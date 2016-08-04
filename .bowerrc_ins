@@ -1,0 +1,6 @@
+{
+    "directory": "bower_components",
+    "proxy":"http://localhost:9666",
+    "https-proxy":"http://localhost:9666",
+    "strict-ssl":false
+}
