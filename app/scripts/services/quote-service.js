@@ -20,7 +20,7 @@ angular.module('stockDogApp')
     			var stock = stocks[idx];
     			stock.lastPrice = parseFloat(quote.LastTradePriceOnly);
     			stock.change = quote.Change;
-    			stock.percentChange = quote.ChangeInPercent;
+    			stock.percentChange = quote.ChangeinPercent;
     			stock.marketValue = stock.shares * stock.lastPrice;
     			stock.dayChange = stock.shares * parseFloat(stock.change);
     			stock.save();
