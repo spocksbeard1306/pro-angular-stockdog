@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <!–– [1] Load MainCtrl ––>
   <body ng-app="stockDogApp" ng-controller="MainCtrl">
     <nav class="navbar navbar-inverse" role="navigation" ng-cloak>
       <div class="container-fluid">
@@ -27,10 +26,8 @@
           </button>
         <a class="navbar-brand" href="/">Stock Dog</a>
         </div>
-        <!–– Collect the nav links and other content for toggling ––>
         <div class="collapse navbar-collapse" id="main-nav">
           <ul class="nav navbar-nav navbar-right">
-            <!–– [2] Add active class to necessary item ––>
             <li ng-class="{active: activeView === 'dashboard'}">
               <a href="/">Dashboard</a>
             </li>
@@ -43,17 +40,15 @@
               <li ng-if="!watchlists.length" class="dropdown-header">
                 No lists found
               </li>
-              <!–– [3] Create a unique link for each watchlist ––>
               <li ng-repeat="list in watchlists track by $index">
                 <a href="/#/watchlist/{{list.id}}">{{list.name}}</a>
               </li>
             </ul>
             </li>
           </ul>
-        </div><!–– /.navbar-collapse ––>
-      </div><!–– /.container-fluid ––>
+        </div>
+      </div>
     </nav>
-    <!–– Main container ––>
     <div class="container-fluid" id="main">
       <div ng-view=""></div>
       <div class="footer">

@@ -9,10 +9,8 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="stock-symbol">Symbol</label>
-						<!-- [1] Use ng-options with label syntax and bs-typeahead directive-->
 						<input type="text" class="form-control" id="stock-symbol" placeholder="Stock Symbol" ng-model="newStock.company" bs-typeahead data-container="#modal-stock" bs-options="company as company.label for company in companies" required>
 					</div>
-					<!-- [2] Only accept numbers for shares owned-->
 					<div class="form-group">
 						<label for="stock-shares">Shares Owned</label>
 						<input type="number" class="form-control" id="stock-shares" placeholder="# Shares Owned" ng-model="newStock.shares" required>
