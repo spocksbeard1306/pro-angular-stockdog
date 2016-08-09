@@ -10,7 +10,7 @@
 angular.module('stockDogApp')
   .service('QuoteService', function ($http, $interval) {
     var stocks = [];
-    var BASE = 'https://query.yahooapis.com/v1/public/yql';
+    var BASE = 'http://query.yahooapis.com/v1/public/yql';
 
     // [1] Manipula la actulizacion del StockModel con data apropiada.
     var update = function(quotes){
