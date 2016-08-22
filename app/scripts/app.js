@@ -17,9 +17,11 @@ angular
     'ngSanitize',
     'ngTouch',
     'mgcrea.ngStrap',
-    'googlechart'
+    'googlechart',
+    'angular-jwt'
   ])
-  .config(function ($routeProvider) {
+  .config(["$routeProvider","$httpProvider",function ($routeProvider,$httpProvider) {
+    $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
     $routeProvider
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
@@ -31,7 +33,12 @@ angular
         controller: 'WatchlistCtrl'
         //controllerAs: 'watchlist'
       })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
       .otherwise({
         redirectTo: '/dashboard'
       });
-  });
+  }]);

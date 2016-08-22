@@ -31,8 +31,7 @@
             <li ng-class="{active: activeView === 'dashboard'}">
               <a href="/">Dashboard</a>
             </li>
-            <li ng-class="{active: activeView === 'watchlist'}"
-            class="dropdown">
+            <li ng-class="{active: activeView === 'watchlist'}" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown">
               Watchlists <b class="caret"></b>
             </a>
@@ -71,6 +70,7 @@
     <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/angular-google-chart/ng-google-chart.js"></script>
+    <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -88,6 +88,8 @@
         <script src="scripts/directives/contenteditable.js"></script>
         <script src="scripts/directives/stk-sign-color.js"></script>
         <script src="scripts/directives/stk-sign-fade.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/services/login.js"></script>
         <!-- endbuild -->
 </body>
 </html>
