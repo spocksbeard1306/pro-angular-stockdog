@@ -8,7 +8,7 @@
  * Controller of the stockDogApp
  */
 angular.module('stockDogApp')
-  .controller('DashboardCtrl', function ($scope, WatchlistService, QuoteService) {
+  .controller('DashboardCtrl', function ($scope, WatchlistService, QuoteService, AUTH_EVENTS) {
   	var unregisteredHandlers = [];
   	$scope.watchlists = WatchlistService.query();
   	$scope.cssStyle = 'height:300px;';

@@ -106,7 +106,11 @@ body {
 .marketing p + h4 {
   margin-top: 28px;
 }
-
+.flex-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {

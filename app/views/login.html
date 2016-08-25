@@ -1,1 +1,19 @@
-<p>This is the login view.</p>
+<div ng-controller="LoginCtrl" class="flex-div">
+	<div class="jumbotron">
+		<h2>Login</h2>
+		<form role="form" id="login" name="loginForm" ng-submit="login(credentials)" autocomplete="off">
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" class="form-control" ng-model="credentials.email" placeholder="Email" required="required" />
+			</div> 
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" class="form-control" ng-model="credentials.password" placeholder="Password" required="required" />
+			</div>
+			<div ng-if="loginFailMsg" class="alert alert-danger">
+				<strong>Error:</strong> {{loginFailMsg}}
+			</div>
+			<button type="submit" class="btn btn-success">Acceder</button>
+		</form>
+	</div>
+</div>

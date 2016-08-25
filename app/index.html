@@ -24,25 +24,41 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand" href="/">Stock Dog</a>
+        <a class="navbar-brand" href="/#/dashboard">Stock Dog</a>
         </div>
         <div class="collapse navbar-collapse" id="main-nav">
-          <ul class="nav navbar-nav navbar-right">
+          <ul  ng-if="currentUser.sesid" class="nav navbar-nav navbar-right">
+            <li>
+              <a ng-click="prueba()">Prueba HTTP</a>
+            </li>
+            <li>
+               <a></a> 
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown">
+                {{currentUser.nombre}} <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a ng-click="logout()">Cerrar sesi&oacute;n</a>
+                </li>
+              </ul>
+            </li>
             <li ng-class="{active: activeView === 'dashboard'}">
-              <a href="/">Dashboard</a>
+              <a href="/#/dashboard">Dashboard</a>
             </li>
             <li ng-class="{active: activeView === 'watchlist'}" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown">
-              Watchlists <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li ng-if="!watchlists.length" class="dropdown-header">
-                No lists found
-              </li>
-              <li ng-repeat="list in watchlists track by $index">
-                <a href="/#/watchlist/{{list.id}}">{{list.name}}</a>
-              </li>
-            </ul>
+              <a class="dropdown-toggle" data-toggle="dropdown">
+                Watchlists <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li ng-if="!watchlists.length" class="dropdown-header">
+                  No lists found
+                </li>
+                <li ng-repeat="list in watchlists track by $index">
+                  <a href="/#/watchlist/{{list.id}}">{{list.name}}</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -89,7 +105,11 @@
         <script src="scripts/directives/stk-sign-color.js"></script>
         <script src="scripts/directives/stk-sign-fade.js"></script>
         <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/services/login.js"></script>
+        <script src="scripts/services/login-service.js"></script>
+        <script src="scripts/services/session-service.js"></script>
+        <script src="scripts/services/logout-service.js"></script>
+        <script src="scripts/services/auth-interceptor.js"></script>
+        <script src="scripts/services/prueba-service.js"></script>
         <!-- endbuild -->
 </body>
 </html>
